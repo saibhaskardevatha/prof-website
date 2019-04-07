@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html  class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dr. Debasish Das</title>
+    <link rel="icon" href="iitg_web_mid.gif" type="image/gif" sizes="16x16">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <style>
+        * {box-sizing: border-box}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          padding: 16px;
+          margin-top: -22px;
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          transition: 0.6s ease;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          cursor: pointer;
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active, .dot:hover {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .prev, .next,.text {font-size: 11px}
+        }
+        </style>
+  </head>
+
+  <body class="has-background-white-bis">
+        <nav class="navbar is-fixed-top is-warning" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="https://www.iitg.ac.in">
+              <img src="iit_logo.png" width="28">
+            </a>
+            <h1 class="navbar-item is-size-4 has-text-black">
+              Bioprocess Development Lab
+            </h1>
+          </div>        
+          <div class="navbar-end">
+            <a href="index.html" class="navbar-item has-text-weight-bold">Home</a>
+            <a href="about.html" class="navbar-item">About</a>
+            <a href="research.html" class="navbar-item">Research Areas</a>
+            <a href="publications.html" class="navbar-item">Publications</a>
+            <a href="patents.html" class="navbar-item">Patents</a>
+            <a href="students.html" class="navbar-item">Students</a>
+            <a href="contact.html" class="navbar-item">Contact</a>
+            <a href="gallery.html" class="navbar-item">Gallery</a>
+          </div>
+        </nav>
+        <section class="section">
+          <div class="columns">
+            <div class="column is-two-thirds">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src="https://unsplash.it/400/200/?random&pic=5" style="width:100%">
+                      <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src="https://unsplash.it/400/200/?random&pic=2" style="width:100%">
+                      <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src="https://unsplash.it/400/200/?random&pic=4" style="width:100%">
+                      <div class="text">Caption Three</div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                    </div>
+            </div>
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                      dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
+            <div class="column">
+                <h1 class="title has-text-centered is-medium">News and Events</h1>
+                <dl>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </dl>
+              </div>
+          </div>
+            
+        </section>
+        <section class="section">
+          <div class="columns">
+              <div class="column is-1"></div>
+            <div class="column">
+              <h1 class="title">About</h1>
+              <p>The research focus of our group is the process development for biofuel production using microbes as a cell factory. The areas which have been pursued currently are: biofuel production from microalgae; development of Clostridium sp. as a cell factory for butanol production; and engineering Zymomonas mobilis for the efficient production of biofuels from lignocellulosic biomass. In our lab we aim at improving overall performance of the technology via combined modifications at the process (Biochemical engineering approach) and strain level (genetic engineering approach). In our group we have expertise to create solutions for process development by combining biochemical and biological knowledge with engineering principles. For detail please refer to the research section.</p>
+            </div>
+            <div class="column is-1"></div>
+          </div>
+        </section>
+        <script src="https://demo.creativebulma.net/components/carousel//assets/js/bulma-carousel.min.js"></script>
+  </body>
+</html>
